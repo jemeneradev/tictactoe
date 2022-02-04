@@ -1,0 +1,19 @@
+@use 'colors';
+.shape {
+    width: 100%;
+    height: 100%;
+}
+.cross {
+    color: var(--theme-x-color);
+}
+
+.circle {
+    color: var(--theme-o-color);
+}
+.cross-inverse {
+    color: var(--semi-dark-navy-color);
+}
+
+.circle-inverse {
+    color: var(--semi-dark-navy-color);
+}

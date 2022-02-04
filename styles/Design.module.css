@@ -1,0 +1,27 @@
+.svgImage {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -100;
+    /* opacity: .5; */
+    /* width: 100%; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.svgImage img {
+    width: 100%;
+}
+
+@media screen and (min-width:768px) {
+    .svgImage img {
+        max-width: 768px;
+    } 
+}
+
+@media screen and (min-width:1440px) {
+    .svgImage img {
+        max-width: 1440px;
+    } 
+}

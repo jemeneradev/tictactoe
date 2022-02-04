@@ -1,0 +1,18 @@
+@mixin theme-colors {
+    --light-blue-color: rgb(49,195,189);
+    --light-blue-hover-color: rgb(101,233,228);
+    --blue-highlight-color: rgb(17,140,135);
+    --light-yellow-color: rgb(242,177,55);
+    --light-yellow-hover-color: rgb(255,200,96);
+    --yellow-highlight-color: rgb(204,139,19);
+    --dark-navy-color: rgb(26,42,51);
+    --semi-dark-navy-color: rgb(31,54,65);
+    --navy-highlight-color: rgb(16,33,42);
+    --silver-color: rgb(168,191,201);
+    --silver-hover-color: rgb(219,232,237);
+    --silver-highlight-color: rgb(107,137,151);
+
+    --x-color: var(--light-blue-color);
+    --o-color: var(--light-yellow-color);
+    --neutral-color:var(--silver-color);
+}

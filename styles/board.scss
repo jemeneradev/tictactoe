@@ -1,0 +1,172 @@
+@use 'colors';
+@use 'utilities';
+
+.Board {
+    display: grid;
+    grid-template-columns: 375px;
+    grid-template-rows: 128px 308px 10px;
+    justify-items: center;
+}
+.Menu {
+    grid-area: 1/1/2/2;
+    display: grid;/* 
+    background-color: chartreuse; */
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: 100%;
+    width: 88%;
+    height: 40px;
+    margin-top: 24px;
+    .Logo {
+        grid-area: 1/1/2/2;
+        justify-self: flex-start;
+    } 
+    .TurnIndicator {
+        grid-area: 1/2/2/3;
+        @include utilities.shadowBox(var(--bg-color),var(--shadow-color),5px,4px);
+        /* @include shadowBox(red,white,5px,4px); */
+        width: 96px;
+        height: 100%;
+        text-align: center;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-evenly;
+        justify-self: center;
+        position: relative;
+        left: 0.16em;
+        > div {
+            width: 19%;
+            height: 40%;
+            position: relative;
+            bottom: 0.12em;
+            left: 0.1em;
+            margin: 0;
+            padding: 0;
+        }
+    
+        strong {
+            font-size: .89em;
+            letter-spacing: 0.05em;
+            position: relative;
+            right: .16em;
+            bottom: .16em;
+            margin: 0;
+            padding: 0;
+        }
+    }
+
+    .RefreshButton {
+        justify-self: flex-end;
+        grid-area: 1/3/2/4;
+        border: 0;
+        @include utilities.shadowBox(var(--bg-color),var(--shadow-color),5px,4px);
+        /* @include shadowBox(red,pink,5px,4px); */
+        width: 40px; 
+        height: 100%;
+        position: relative;
+        right: 0.5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        svg {
+            position: relative;
+            bottom: 0;
+            width: 15px;
+        }
+    }
+}
+
+.Grid {
+    grid-area: 2/1/3/2;
+    width: 87.6%;
+    height: 106.5%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    grid-template-rows: repeat(3,1fr);
+    grid-template-columns: repeat(3,1fr);
+    gap: 6% 6%;
+    align-items: end;
+    justify-content: stretch;
+    position: relative;
+    left: 0;/* 
+    background-color: chocolate; */
+    .Pad {
+        --pad-body: var(--semi-dark-navy-color);
+        --pad-highlight: var(--navy-highlight-color);
+        @include utilities.shadowBox(var(--pad-body),var(--pad-highlight),10px,8px);
+        /* @include shadowBox(white,red,10px,8px);  */
+        height: 100%;
+        width: 100%;
+        position: relative;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+        
+
+        .GamePiece {
+            width: 62%;
+            height: 42.7%;
+            position: relative;
+            bottom: 0.24em;
+        }
+        .xPiece {                
+            left: 0.04em;
+        }
+        .oPiece {
+            left: 0.05em;
+        }
+    }
+    .Pad--selectedX{
+        --pad-body: var(--light-blue-color);
+        --pad-highlight: var(--blue-highlight-color); 
+    }
+    .Pad--selectedO{
+        --pad-body: var(--light-yellow-color);
+        --pad-highlight: var(--yellow-highlight-color); 
+    }
+}
+
+.Scores {
+    grid-area: 4/1/5/2;
+    width: 87.5%;
+    height: 29%;
+    margin: 0;
+    margin-top: 30px;
+    position: relative;
+    left: 1px;/* 
+    background-color: blueviolet; */
+    ul {
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        li {
+            width: 29.3%;
+            border-radius: 10px;
+            p {
+                text-align: center;
+                margin: 0;
+                padding: 0;
+                font-weight: 400;
+                margin-top: 1em;
+                margin-left: .13em;
+                letter-spacing: 0.06em;
+                font-size: .75em;
+                strong {
+                    margin-top: 0;
+                    font-size: 1.65em;
+                    display: block;
+                    letter-spacing: 0.074em;
+                }
+            }
+        }
+    }
+}
